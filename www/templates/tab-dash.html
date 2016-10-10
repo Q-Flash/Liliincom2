@@ -1,0 +1,18 @@
+<ion-view view-title="EventMaster">
+
+  <ion-content class="padding">
+
+<form name="form.search" ng-submit="form.search.$valid && goToList()">
+     <label class="item item-input">
+       <i class="icon ion-search placeholder-icon"></i>
+       <input type="text" ng-model="search.string" required="required" placeholder="Event name">
+     </label>
+     <br />
+
+ 
+     <button class="button button-calm button-block" ng-disabled="form.search.$invalid"><b>Search</b></button>
+   </form>
+
+
+  </ion-content>
+</ion-view>
