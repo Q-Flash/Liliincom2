@@ -120,17 +120,18 @@ angular.module('App', ['ionic','ngMessages', 'App.controllers', 'App.services', 
     url: '/home',
     templateUrl: 'templates/tabs.html',
     controller:'homeController'
-  });
-   /*kamaal added
+  })
+
+   //kamaal added
   .state('manager', {
     url: '/manager',
     templateUrl: 'templates/manager.html',
     controller:'managerController'
-  });*/
+  });
 
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/login');
+  $urlRouterProvider.otherwise('/manager');
 
 })
 .constant('FURL', 'https://lilincom-sports.firebaseio.com/');
