@@ -4,7 +4,7 @@ angular.module('App.controllers', ['ionic','ionic.rating', 'ngCordova'])
 
 .controller('MapCtrl', function($scope, $state, $cordovaGeolocation, $ionicLoading, $ionicPopup) {
   var options = {timeout: 10000, enableHighAccuracy: true, maximumAge: 0};
- 
+
   $cordovaGeolocation.getCurrentPosition(options).then(function(position){
     var EventmyLatlng = new google.maps.LatLng('13.1704468','-59.6357891'); //Sandy Lane Golf Course
     var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
@@ -59,7 +59,7 @@ angular.module('App.controllers', ['ionic','ionic.rating', 'ngCordova'])
           });
       };
 })
-.controller('ChatsCtrl', function($scope, Chats,$location) {
+.controller('ChatsCtrl', function($scope, Chats,$location,News) {
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
   // To listen for when this page is active (for example, to refresh data),
@@ -67,6 +67,10 @@ angular.module('App.controllers', ['ionic','ionic.rating', 'ngCordova'])
   //
   //$scope.$on('$ionicView.enter', function(e) {
   //});
+  $scope.news = News.all();
+  $scope.remove = function(item){
+    News.remove(item);
+  };
   $scope.chats = Chats.all();
   $scope.remove = function(chat) {
     Chats.remove(chat);
@@ -81,7 +85,7 @@ angular.module('App.controllers', ['ionic','ionic.rating', 'ngCordova'])
 
 
 
-.controller('ChatDetailCtrl', function($scope, $stateParams, $location,$cordovaCamera, Chats, $state, $localStorage,$http,$ionicPopup, $firebaseArray, $firebaseObject, FURL) {
+.controller('ChatDetailCtrl', function($scope, $stateParams, $location,$cordovaCamera, Chats,News, $state, $localStorage,$http,$ionicPopup, $firebaseArray, $firebaseObject, FURL) {
   // set the rate and max variables
   $scope.ratingsObject = {
         iconOn: 'ion-ios-star',    //Optional
@@ -159,7 +163,7 @@ angular.module('App.controllers', ['ionic','ionic.rating', 'ngCordova'])
 }
 
   $scope.chat = Chats.get($stateParams.chatId);
-
+  $scope.item = News.get($stateParams.itemId);
 
   /*
   var ref = new Firebase(FURL);

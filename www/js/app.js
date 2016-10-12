@@ -1,16 +1,17 @@
 // Ionic Starter App
 
 // angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
+// 'App' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('App', ['ionic','ngMessages', 'App.controllers', 'App.services', 'ngCordova', 'ngCordovaOauth', 'ngStorage', 'firebase'])
+angular.module('App', ['ionic','ngMessages','ngAnimate',/*'uiCalendarConfig','ui.rCalendar',*/'App.controllers', 'App.services', 'ngCordova', 'ngCordovaOauth', 'ngStorage', 'firebase'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $animate) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
+    $animate.enabled(false);
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
       cordova.plugins.Keyboard.disableScroll(true);
@@ -65,7 +66,7 @@ angular.module('App', ['ionic','ngMessages', 'App.controllers', 'App.services', 
       url: '/chats',
       views: {
         'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
+          templateUrl: 'templates/tab-news.html',
           controller: 'ChatsCtrl'
         }
       }
@@ -122,16 +123,27 @@ angular.module('App', ['ionic','ngMessages', 'App.controllers', 'App.services', 
     controller:'homeController'
   })
 
+  .state('calender', {
+    url: '/calender',
+    views: {
+      templateUrl: 'templates/calender.html',
+      controller:'calenderController'
+    }
+  })
    //kamaal added
-  .state('manager', {
+  .state('tab.manager', {
     url: '/manager',
-    templateUrl: 'templates/manager.html',
-    controller:'managerController'
+    views: {
+      'tabs-manager': {
+        templateUrl: 'templates/manager.html',
+        controller:'managerController'
+      }
+    }
   });
 
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/manager');
+  $urlRouterProvider.otherwise('/login');
 
 })
 .constant('FURL', 'https://lilincom-sports.firebaseio.com/');

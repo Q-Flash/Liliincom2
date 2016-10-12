@@ -1,5 +1,39 @@
 angular.module('App.services', [])
+.factory('News', function($firebaseObject,FURL,$firebaseArray) {
+  var news = [{
+   id: 1,
+    name: 'Fishing',
+    details: 'Gotta get dem potaters',
+    location:'Browns Beach',
+    date:' Mon Oct 24, 2016',
+    date_added: 'Oct 12 2016'
+  }, {
+   id: 2,
+   name: 'Baseball',
+   details: 'Goose lurks holding fish',
+   location:'Sommoners Rift',
+   date:' Mon Oct 17, 2016',
+   date_added: 'Oct 12 2016'
+  }];
 
+
+  return {
+    all: function() {
+      return news;
+    },
+    remove: function(item) {
+      news.splice(news.indexOf(item), 1);
+    },
+    get: function(itemId) {
+      for (var i = 0; i < news.length; i++) {
+        if (news[i].id === parseInt(itemId)) {
+          return news[i];
+        }
+      }
+      return null;
+    }
+  };
+})
 .factory('Chats', function($firebaseObject,FURL,$firebaseArray) {
   // Might use a resource here that returns a JSON array
   /*
@@ -29,6 +63,45 @@ angular.module('App.services', [])
 
   })
   */
+  /*
+  var events = [
+  {
+    id: 1,
+    name: 'Cricket Tournament',
+    eventDetails: 'Potaters taste real nice',
+    location: 'UWI',
+    start_date: '11 January 2017',
+    end_date: '16 January 2017'
+  },
+  {
+    id: 2,
+    name: 'Uber training',
+    eventDetails: 'Potaters STILL taste real nice',
+    location: 'Pebbles Beach',
+    start_date: '29 October 2016',
+    end_date: '1 November 2016'
+  }
+
+  ];
+  */
+  var events = [{
+   id: 1,
+    name: 'CSS App Workshop',
+    eventDetails: 'Join us at the CSS workshop and embark on your future, build a killer app and win tons of great prizes.This is what you have been waiting for!',
+    face: 'img/appw.jpg',
+    Location:'UWI Cave Hill Campus, Barbados',
+    Date:' Mon May 23, 2016 9:00pm',
+    points:'13.1345697,-59.6319762'
+  }, {
+   id: 2,
+    name: 'Day 2',
+    eventDetails: 'Day 2 will be the ultimate cropover experience! Early bird tickets available from all box offices from 9am - 4pm. Happy hour from 10pm - 11pm. Premium drinks half price until 12am.  ',
+    face: 'img/web6.jpg',
+    Location:'Kensington Oval',
+    Date:' Aug 2, 2016 11:00pm',
+    points:'13.1050324,-59.6244109'
+
+  }];
   var chats = [{
    id: 1,
     name: 'CSS App Workshop',
