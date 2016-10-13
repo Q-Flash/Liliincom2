@@ -54,9 +54,6 @@
     <script src="js/manager.js"></script>
     <script src="js/calender.js"></script>
     <script src="js/scheduler.js"></script>
-    <script src="js/health.js"></script>
-    <script src="js/budget.js"></script>
-    <script src="js/report.js"></script>
 
   </head>
     <body ng-app="App">
