@@ -103,6 +103,11 @@ angular.module('App', ['ionic','ngMessages','ngAnimate',/*'uiCalendarConfig','ui
     controller:'loginController'
   })
 
+  .state('editRoster', {
+    url: '/editRoster',
+    templateUrl: 'templates/editRoster.html',
+    controller:'editRosterCtrl'
+  })
 
   .state('manager', {
     url: '/manager',
@@ -152,6 +157,7 @@ angular.module('App', ['ionic','ngMessages','ngAnimate',/*'uiCalendarConfig','ui
       templateUrl: 'templates/budget.html',
       controller:'budgetController'
   })
+
   .state('report', {
     url: '/report',
       templateUrl: 'templates/report.html',
@@ -168,4 +174,4 @@ angular.module('App', ['ionic','ngMessages','ngAnimate',/*'uiCalendarConfig','ui
   $urlRouterProvider.otherwise('/login');
 
 })
-.constant('FURL', 'https://lilincom-sports.firebaseio.com/');
+.constant('FURL','https://lilincom-sports.firebaseio.com');

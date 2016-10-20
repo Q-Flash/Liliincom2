@@ -84,6 +84,7 @@ angular.module('App.controllers', ['ionic','ionic.rating', 'ngCordova'])
 
 })
 
+
 .controller('NewsDetailCtrl', function($scope, $stateParams, $location,$cordovaCamera, Chats,News, $state, $localStorage,$http,$ionicPopup, $firebaseArray, $firebaseObject, FURL) {
   // set the rate and max variables
   $scope.ratingsObject = {
