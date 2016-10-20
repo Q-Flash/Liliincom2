@@ -1,0 +1,39 @@
+<ion-view view-title="Add New Player" >
+        <ion-content class="padding-top">
+          <div class="list text-center padding">
+            <i class="icon ion-ios-game-controller-b larger positive"></i>
+          </div>
+          <form novalidate="" name="playerForm" form-manager>
+          <div class="list">
+            <label class="item item-input item-floating-label">
+              <span class="input-label">Player First Name</span>
+              <input name="txtplayerfname" type="text" ng-model="player.player_fname" placeholder="First Name">
+            </label>
+            <label class="item item-input item-floating-label" >
+              <span class="input-label">Player Last Name</span>
+              <input name="txtplayerlname" type="text" ng-model="player.player_lname" placeholder="Last Name">
+            </label>
+
+
+          <label class="item item-input item-floating-label">
+            <span class="input-label">Primary Role</span>
+            <input name="txtplayerprole" type="text" ng-model="player.playerprole" placeholder="Role">
+          </label>
+
+          <label class="item item-input item-floating-label">
+            <span class="input-label">Secondary Role</span>
+            <input name="txtplayersrole" type="text" ng-model="player.playersrole" placeholder="Role">
+          </label>
+      
+
+          </div>
+          <div class="padding-top">
+            <button ng-click="submit()"  class = "button button-block button-calm">
+              Submit
+            </button>
+            <a href="#/login" class="button button-clear button-calm">Back</a>
+          </div>
+        </form>
+
+        </ion-content>
+</ion-view>

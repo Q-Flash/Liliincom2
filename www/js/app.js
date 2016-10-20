@@ -75,7 +75,7 @@ angular.module('App', ['ionic','ngMessages','ngAnimate',/*'uiCalendarConfig','ui
       url: '/chats/:chatId',
       views: {
         'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
+          templateUrl: 'templates/news_detail.html',
           controller: 'ChatDetailCtrl'
         }
       }
@@ -102,6 +102,13 @@ angular.module('App', ['ionic','ngMessages','ngAnimate',/*'uiCalendarConfig','ui
     templateUrl: 'templates/login.html',
     controller:'loginController'
   })
+
+
+  .state('manager', {
+    url: '/manager',
+    templateUrl: 'templates/manager.html',
+    controller: 'managerController'
+  })
   .state('adminlogin', {
       url: '/adminlogin',
       templateUrl: 'templates/admin-login.html',
@@ -119,28 +126,17 @@ angular.module('App', ['ionic','ngMessages','ngAnimate',/*'uiCalendarConfig','ui
   })
   .state('home', {
     url: '/home',
-    templateUrl: 'templates/tabs.html',
+    templateUrl: 'templates/calender.html',
     controller:'homeController'
   })
 
   .state('calender', {
     url: '/calender',
-    views: {
-      templateUrl: 'templates/calender.html',
-      controller:'calenderController'
-    }
+    templateUrl: 'templates/calender.html',
+    controller:'calenderController'
   })
-  
-  .state('tab.manager', {
-    url: '/manager',
-    views: {
-      'tabs-manager': {
-        templateUrl: 'templates/manager.html',
-        controller:'managerController'
-      }
-    }
-  })
-  
+
+
   .state('scheduler', {
     url: '/scheduler',
       templateUrl: 'templates/scheduler.html',

@@ -77,15 +77,11 @@ angular.module('App.controllers', ['ionic','ionic.rating', 'ngCordova'])
   };
 })
 
+.controller('managerController', function($scope) {
 
+})
 
-
-
-
-
-
-
-.controller('ChatDetailCtrl', function($scope, $stateParams, $location,$cordovaCamera, Chats,News, $state, $localStorage,$http,$ionicPopup, $firebaseArray, $firebaseObject, FURL) {
+.controller('NewsDetailCtrl', function($scope, $stateParams, $location,$cordovaCamera, Chats,News, $state, $localStorage,$http,$ionicPopup, $firebaseArray, $firebaseObject, FURL) {
   // set the rate and max variables
   $scope.ratingsObject = {
         iconOn: 'ion-ios-star',    //Optional

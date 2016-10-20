@@ -1,3 +1,11 @@
+
+<ion-view view-title="Calendar" hide-back-button="true">
+        <ion-content class="padding-top">
+          <h1>Hello There!</h1>
+          <button ng-click="logOut()" class="button button-clear button-positive">Logout</button>
+        </ion-content>
+</ion-view>
+
 <!--
 Create tabs with an icon and label, using the tabs-positive style.
 Each tab's child <ion-nav-view> directive will have its own
@@ -17,8 +25,8 @@ navigation history that also transitions its views in and out.
     <ion-nav-view name="tab-dash"></ion-nav-view>
   </ion-tab>
 
-  <ion-tab  icon-off="ion-pinpoint" icon-on="ion-pinpoint" href="#/tab/manager">
-    <ion-nav-view name="tabs-manager"></ion-nav-view>
+  <ion-tab  icon-off="ion-pinpoint" icon-on="ion-pinpoint" href="#/manager">
+    <ion-nav-view name="manager"></ion-nav-view>
   </ion-tab>
 
 
