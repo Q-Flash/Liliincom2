@@ -52,6 +52,9 @@ angular.module('App.services', [])
     all: function() {
       return team;
     },
+    remove: function(player) {
+      team.splice(news.indexOf(player), 1);
+    },
     get: function(playerId) {
       for (var i = 0; i < team.length; i++) {
         if (team[i].id === parseInt(playerId)) {

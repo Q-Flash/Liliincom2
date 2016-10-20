@@ -1,7 +1,7 @@
 angular.module('App.controllers', ['ionic','ionic.rating', 'ngCordova'])
 
 .controller('RosterCtrl', function($scope, $location, Team) {
-  $scope.team = Team.all();
+  $scope.player = Team.all();
 
 })
 
