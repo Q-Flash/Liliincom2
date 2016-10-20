@@ -52,12 +52,12 @@ angular.module('App', ['ionic','ngMessages','ngAnimate',/*'uiCalendarConfig','ui
     })
   // Each tab has its own nav history stack:
 
-  .state('tab.dash', {
-    url: '/dash',
+  .state('tab.roster', {
+    url: '/roster',
     views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
+      'tab-roster': {
+        templateUrl: 'templates/tab-roster.html',
+        controller: 'RosterCtrl'
       }
     }
   })
