@@ -69,7 +69,6 @@
         </ion-header-bar>
         <ion-content class="background-royal">
           <ion-list><br>
-          <ion-item class="item-divider item-icon-right"><b><a href="#/tab/chats" class="button button-clear button-calm">Home</a></b> <i class="icon ion-person"></i></ion-item><br>
           <ion-item class="item-divider item-icon-right"><b>Account</b> <i class="icon ion-person"></i></ion-item><br>
           <ion-item class="item-divider item-icon-right"><b>Settings</b> <i class="icon ion-gear-b"></i></ion-item><br>
           <ion-item class="item-divider item-icon-right"><b>My Events</b> <i class="icon ion-ios-copy"></i></ion-item><br>
