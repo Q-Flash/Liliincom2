@@ -103,6 +103,12 @@ angular.module('App', ['ionic','ngMessages','ngAnimate',/*'uiCalendarConfig','ui
     controller:'loginController'
   })
 
+  .state('adminRoster', {
+    url: '/adminRoster',
+    templateUrl: 'templates/admin-roster.html',
+    controller:'AdminRosterCtrl'
+  })
+
   .state('editRoster', {
     url: '/editRoster',
     templateUrl: 'templates/editRoster.html',

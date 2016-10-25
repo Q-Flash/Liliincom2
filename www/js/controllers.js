@@ -4,7 +4,10 @@ angular.module('App.controllers', ['ionic','ionic.rating', 'ngCordova'])
   $scope.team = Team.all();
 
 })
-
+.controller('AdminRosterCtrl', function(Team,Players,$scope) {
+  //$scope.team = Team.all();
+  $scope.player_details = Players.all();
+})
 .controller('MapCtrl', function($scope, $state, $cordovaGeolocation, $ionicLoading, $ionicPopup) {
   var options = {timeout: 10000, enableHighAccuracy: true, maximumAge: 0};
 
