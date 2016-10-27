@@ -91,7 +91,7 @@ angular.module('App.services', [])
 
 })
 
-.factory('Injuries', function($firebaseObject,FURL,$firebaseArray) { //added by Kamaal
+.factory('Injuries', function($firebaseObject,FURL,$firebaseArray) {
  // Some fake testing data
   var ref = new Firebase(FURL);
   var injuries = ref.child("Injuries");

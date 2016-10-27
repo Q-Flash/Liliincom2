@@ -58,7 +58,6 @@
     <script src="js/budget.js"></script>
     <script src="js/report.js"></script>
     <script src="js/editRoster.js"></script>
-    <script src="js/edithealth.js"></script>
 
   </head>
     <body ng-app="App">

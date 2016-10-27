@@ -168,7 +168,7 @@ angular.module('App.controllers', ['ionic','ionic.rating', 'ngCordova'])
 
   $scope.chat = Chats.get($stateParams.chatId);
   $scope.item = News.get($stateParams.itemId);
-  //$scope.player = Team.get($stateParams.playerId);
+  $scope.player = Team.get($stateParams.playerId);
 
   /*
   var ref = new Firebase(FURL);

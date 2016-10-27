@@ -158,11 +158,6 @@ angular.module('App', ['ionic','ngMessages','ngAnimate',/*'uiCalendarConfig','ui
       templateUrl: 'templates/health.html',
       controller:'healthController'
   })
-  .state('edithealth', {
-    url: '/edithealth',
-      templateUrl: 'templates/edithealth.html',
-      controller:'edithealthCtrl'
-  })
   .state('budget', {
     url: '/budget',
       templateUrl: 'templates/budget.html',

@@ -34,7 +34,7 @@
         <tbody>
             <tr ng-repeat="injury in injury_details">
                 <td><button class="button icon ion-ios-minus-outline"></button></td>
-                <td>{{injury.player_fname}}</td>
+                <td>{{injury.player_name}}</td>
                 <td>{{injury.player_injury}}</td>
                 <td>{{injury.recovery_days}}</td>
             </tr>
