@@ -27,15 +27,15 @@
         <thead>
             <tr>
                 <th>Name</th>
-               <!-- <th>#Number</th> -->
+                <th>#Number</th>
                 <th>Position</th>
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="player in player_details">
-                <td>{{player.player_fname}}</td>
-               <!-- <td>{{player.number}}</td> -->
-                <td>{{player.player_prole}}</td>
+            <tr ng-repeat="player in team">
+                <td>{{player.name}}</td>
+                <td>{{player.number}}</td>
+                <td>{{player.position}}</td>
             </tr>
         </tbody>
     </table>
