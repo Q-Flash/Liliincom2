@@ -7,6 +7,10 @@ angular.module('App.controllers', ['ionic','ionic.rating', 'ngCordova'])
 .controller('AdminRosterCtrl', function(Team,Players,$scope) {
   //$scope.team = Team.all();
   $scope.player_details = Players.all();
+  $scope.remove_player= function(selected_player){
+    Players.delete_record(selected_player);
+    console.log("Maed it to remove_player function");
+  }
 })
 .controller('MapCtrl', function($scope, $state, $cordovaGeolocation, $ionicLoading, $ionicPopup) {
   var options = {timeout: 10000, enableHighAccuracy: true, maximumAge: 0};

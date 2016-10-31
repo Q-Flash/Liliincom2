@@ -46,11 +46,11 @@ angular.module('App.services', [])
     angular.forEach(playerInfo, function (value, key){
       //var eventLocation = '<div id = "content"'>+value.event_location + '</div>';
       //var displayEventLoc = value.event_location;
-      console.log(key);
-      console.log(value);
+      //console.log(key);
+      //console.log(value);
       var displayPlayerInfo = value;
-      console.log(displayPlayerInfo);
-      console.log(displayPlayerInfo.player_fname);
+      //console.log(displayPlayerInfo);
+      //console.log(displayPlayerInfo.player_fname);
       var temp_player = {
         id: key,
         player_fname: displayPlayerInfo.player_fname,
@@ -59,24 +59,29 @@ angular.module('App.services', [])
         player_srole: displayPlayerInfo.player_srole
       };
       player_details_for_table.push(temp_player);
-      //var displayPlayerLocations = '<div id="content">' +displayEventInfo.event_name+ '</div';
-      //var displayEvent{
-      //  event_name: value.event_name,
-      //  event_date: value.event_date,
-      //  event_time: value.event_time,
-      //  event_location: value.event_location,
-      //  event_description: value.event_description
-      //}
     })
 
-  })
-
+  }) /*
+  $scope.delete_from_roster: function(player_record){
+    for (var i = 0; i < player_details_for_table.length; i++) {
+      if (player_details_for_table[i].id === player_record.id) {
+        player_details_for_table[i].remove();
+        console.log("Remove function2 happened");
+      }
+  } */
   return {
+
     all: function() {
       return player_details_for_table;
     },
     remove: function(displayPlayerInfo) {
       player_details_for_table.splice(player_details_for_table.indexOf(displayPlayerInfo), 1);
+      console.log("Remove function happened");
+    },
+    delete_record: function(record){
+        players.child(record.id).remove();
+        console.log("Delete record function happened");
+      }
     },
     get: function(playerId) {
       for (var i = 0; i < player_details_for_table.length; i++) {
